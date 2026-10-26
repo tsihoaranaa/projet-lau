@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADECAF — Discover Madagascar, One bean at a time | Premium Organic Coffee</title>
+    <meta name="description" content="Artisanal organic coffee beans sourced directly from Madagascar's volcanic highlands and lush rainforests. Ethically traded, roasted to perfection.">
+    
+    <!-- Webfonts (Chesna Grotesk CDN + Fallbacks) -->
+    <link href="https://db.onlinewebfonts.com/c/99affb9f81f19ed7f37e4a809f5b8770?family=FSP+DEMO+-+Chesna+Grotesk+Book" rel="stylesheet" type="text/css">
+    <link href="https://db.onlinewebfonts.com/c/3f33296cd6ab58dd3844f945d9c8b83d?family=FSP+DEMO+-+Chesna+Grotesk+Bold" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- 1. Top Announcement Bar -->
+    <div class="announcement-bar">
+        <span>🇲🇬 <strong>MADECAF</strong>: Malagasy Robusta Green Coffee for Malaysian Coffee Businesses</span>
+        <span>•</span>
+        <span>📦 Request Cupping Samples & Direct Wholesale Enquiries</span>
+    </div>
+
+    <!-- 2. Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="brand-logo">
+                <svg width="26" height="26" viewBox="0 0 24 24">
+                    <path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 4.02.11 7.22-3.1 7.22-7.1v-.9h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zm0 5h-.5V5h.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM4 19h16v2H4z"/>
+                </svg>
+                <span>MADECAF</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Green Coffee & Samples</a></li>
+                    <li><a href="#ai-experience">AI Sourcing Tool & Video</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#ai-declaration">AI Declaration</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-toggle-btn" aria-label="Open Sample Cart">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Samples Cart</span>
+                    <span class="cart-count" id="cart-badge">0</span>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="tagline-badge">Connecting Origin & Roasters</span>
+                <h1>Discover Madagascar, <span>One bean at a time</span></h1>
+                <p>
+                    Explore Malagasy Robusta green coffee for Malaysian coffee businesses. Discover our products, explore sample options and start your coffee sourcing journey with MadeCaf.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Explore Our Coffee</a>
+                    <a href="#products" class="btn btn-outline">Request Samples</a>
+                    <button class="btn btn-outline" id="watch-promo-video-btn" style="border-style: dashed;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        AI Promo Film (40s)
+                    </button>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <h4>Sample-First</h4>
+                        <p>Evaluate Before Bulk Order</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Origin</h4>
+                        <p>Madagascar Direct Link</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>B2B Market</h4>
+                        <p>For Malaysian Roasters & Cafés</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-image-placeholder">
+                        <span style="font-size: 4.5rem; margin-bottom: 12px;">🌱</span>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Malagasy Robusta Green Coffee</h3>
+                        <p style="font-size: 0.92rem; opacity: 0.9; max-width: 320px;">
+                            High-density green beans from pristine volcanic soils, ready for roaster cupping trials in Malaysia.
+                        </p>
+                    </div>
+                    <div class="hero-floating-badge">
+                        <div class="badge-icon">📦</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem;">Sample Orders Ready</div>
+                            <div style="font-size: 0.75rem; color: var(--color-text-muted);">1kg Cupping Pouches & 5kg Pilot Bags</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Key Value Props -->
+    <section class="section-padding features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Sample-First Approach</h3>
+                    <p>Order 1kg or 5kg roaster samples to cup, profile, and test before committing to commercial green bean volumes.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🇲🇾</div>
+                    <h3>Tailored for Malaysia</h3>
+                    <p>Ideal for Malaysian roasters, specialty cafés, and bold espresso / modern kopitiam blends demanding rich crema.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Unique Agroforestry Origin</h3>
+                    <p>Robusta grown in wild shade canopies and volcanic soils across Mananjary and the Sambirano basin in Madagascar.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Direct Trade Enquiries</h3>
+                    <p>Transparent communication directly with origin specialists, with clear lot traceability and custom logistics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. About Us Section (Word-for-word from User Brief) -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="tagline-badge">About Us</span>
+                    <h2 class="section-title">Our Background</h2>
+                    <p>
+                        <strong>MADECAF</strong> is a coffee sourcing business concept focused on introducing Robusta green coffee from Madagascar to Malaysian coffee businesses. Through a digital platform, we aim to connect coffee origin with professional buyers looking to explore potential sourcing opportunities.
+                    </p>
+                    
+                    <div style="margin: 22px 0;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--color-accent);">Our Mission</h3>
+                        <p style="margin-bottom: 16px;">
+                            To make Malagasy Robusta green coffee more accessible to Malaysian coffee businesses through product discovery, sample options and direct business enquiries.
+                        </p>
+
+                        <h3 style="font-size: 1.25rem; margin-bottom: 6px; color: var(--color-accent);">Our Vision</h3>
+                        <p style="margin-bottom: 16px;">
+                            To build a recognised connection between Madagascar's coffee origin and international coffee businesses.
+                        </p>
+                    </div>
+
+                    <div class="about-pillars">
+                        <div class="pillar-card">
+                            <h4>Target Customers</h4>
+                            <p>• Malaysian coffee roasters seeking green coffee beans<br>
+                               • Independent roaster-cafés exploring potential coffee sourcing options<br>
+                               • Professional coffee buyers interested in discovering coffee from Madagascar</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h4>Unique Selling Proposition (USP)</h4>
+                            <p>MadeCaf combines a clear geographical identity with a sample-first approach to coffee discovery. Buyers can explore the available products, request samples and contact us to discuss their requirements before considering a larger order.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 12px; color: var(--color-primary);">Malagasy Robusta Green Coffee Profile</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">
+                        Bridging Madagascar origin directly to Southeast Asia's growing craft and specialty coffee market.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="number">Screen 18</div>
+                            <div class="label">Top Screen Grading</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">100%</div>
+                            <div class="label">Green Raw Beans</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">1kg - 5kg</div>
+                            <div class="label">Sample Lot Formats</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="number">Direct</div>
+                            <div class="label">B2B Dialogue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Products / Services Catalog Section -->
+    <section class="section-padding" id="products">
+        <div class="container">
+            <div class="text-center">
+                <span class="tagline-badge">Sourcing Catalog</span>
+                <h2 class="section-title">Malagasy Robusta Green Coffee & Sample Options</h2>
+                <p class="section-subtitle">
+                    Select your green bean origin and sample format. Evaluate green bean density, screen size, moisture, and cupping profile in your roastery.
+                </p>
+            </div>
+
+            <!-- Categories Filter Buttons -->
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">All Sourcing Products (4)</button>
+                <button class="filter-btn" data-filter="green-beans">Green Coffee Lots</button>
+                <button class="filter-btn" data-filter="micro-lot">Micro-Lot Reserves</button>
+                <button class="filter-btn" data-filter="samples">Cupping Sample Kits</button>
+            </div>
+
+            <!-- Dynamic Product Cards Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Populated dynamically via main.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. AI Integrations Showcase (Video, Infographic, Sourcing Advisor) -->
+    <section class="section-padding ai-section" id="ai-experience">
+        <div class="container">
+            <div class="text-center">
+                <span class="tagline-badge">AI Sourcing Innovation</span>
+                <h2 class="section-title">Digital Sourcing Intelligence</h2>
+                <p class="section-subtitle">
+                    Leveraging artificial intelligence to accelerate the bridge between Madagascar coffee farms and Malaysian roasteries.
+                </p>
+            </div>
+
+            <div class="ai-grid">
+                <!-- Feature 1: AI Interactive Promo Video Player -->
+                <div class="ai-card">
+                    <span class="ai-badge">✨ AI Element #1: Promo Video</span>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 8px;">MADECAF Official Sourcing Film (40s)</h3>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+                        Generated AI cinematic presentation introducing Malagasy Robusta green coffee terroirs, harvesting methods, and Malaysian roaster partnerships.
+                    </p>
+                    <div class="video-container">
+                        <div class="video-simulation-bg"></div>
+                        <button class="play-pulse-btn" onclick="openVideoModal()" aria-label="Play AI Promo Video">▶</button>
+                        <p style="margin-top: 16px; font-weight: 600; font-size: 0.95rem; z-index: 2;">Click to Watch 40s Sourcing Film</p>
+                        <span style="font-size: 0.75rem; color: #BD7E4A; z-index: 2;">Includes voiceover transcripts & supply chain animation</span>
+                    </div>
+                </div>
+
+                <!-- Feature 2: AI Farm-to-Cup Interactive Infographic -->
+                <div class="ai-card">
+                    <span class="ai-badge">📊 AI Element #2: Sourcing Pipeline Infographic</span>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 8px;">From Madagascar Canopies to Malaysian Roasteries</h3>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+                        Interactive visual guide mapping out our sample-first green coffee sourcing pipeline.
+                    </p>
+                    <div class="infographic-box">
+                        <div class="infographic-step">
+                            <span class="step-num">1</span>
+                            <div class="step-content">
+                                <h4>Selective Harvest & Milling</h4>
+                                <p>Ripe Malagasy Robusta cherries harvested and hulled with strict density & screen 18 sorting.</p>
+                            </div>
+                        </div>
+                        <div class="infographic-step">
+                            <span class="step-num">2</span>
+                            <div class="step-content">
+                                <h4>Digital Discovery & Sample Request</h4>
+                                <p>Malaysian buyers explore lots online and order 1kg/5kg sample pouches for cupping analysis.</p>
+                            </div>
+                        </div>
+                        <div class="infographic-step">
+                            <span class="step-num">3</span>
+                            <div class="step-content">
+                                <h4>Roaster Lab Evaluation</h4>
+                                <p>Roasters conduct roast profiling, moisture checks, and sensory cupping in their Malaysian facilities.</p>
+                            </div>
+                        </div>
+                        <div class="infographic-step">
+                            <span class="step-num">4</span>
+                            <div class="step-content">
+                                <h4>Direct Wholesale Enquiries</h4>
+                                <p>Seamless transition to commercial orders (bags or container volumes) via direct dialogue.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: AI Smart Green Coffee Matchmaker -->
+            <div class="advisor-card">
+                <div>
+                    <span class="ai-badge">🤖 AI Element #3: Roaster Blend & Profile Matchmaker</span>
+                    <h3 style="font-size: 1.35rem; margin-bottom: 4px;">Find the Right Malagasy Robusta for Your Roast Profile</h3>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted);">
+                        Select your roast objective and target beverage style to find which green bean lot best matches your needs.
+                    </p>
+                </div>
+
+                <form id="coffee-quiz-form">
+                    <div class="quiz-container">
+                        <div class="quiz-group">
+                            <label for="quiz-roast">Target Roast Profile</label>
+                            <select id="quiz-roast">
+                                <option value="medium">Medium / City Roast (Specialty Robusta)</option>
+                                <option value="dark">Full City / Dark Roast (Bold & Heavy)</option>
+                                <option value="light">Light / Filter Experimentation</option>
+                            </select>
+                        </div>
+                        <div class="quiz-group">
+                            <label for="quiz-brew">Application in Malaysia</label>
+                            <select id="quiz-brew">
+                                <option value="espresso">Espresso Blend Crema Booster</option>
+                                <option value="filter">Single-Origin Robusta Pour-Over</option>
+                                <option value="french">Craft Kopitiam / Cold Brew Base</option>
+                            </select>
+                        </div>
+                        <div class="quiz-group">
+                            <label for="quiz-flavor">Desired Cupping Sensory</label>
+                            <select id="quiz-flavor">
+                                <option value="cocoa">Dark Chocolate & Roasted Nuts (Mananjary)</option>
+                                <option value="fruity">Sweet Tropical Fruits & Honey (Sambirano)</option>
+                                <option value="rare">Complex Discovery Kit (3 Terroirs)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Recommended Green Coffee Sample</button>
+                </form>
+
+                <div id="quiz-result" class="recommendation-result"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Digital Marketing & Newsletter Promotion Banner -->
+    <section class="container">
+        <div class="marketing-banner">
+            <div class="banner-content">
+                <span class="promo-badge-tag">B2B ROASTER ENQUIRIES</span>
+                <h2 style="margin-top: 14px;">Join the Malaysian Coffee Sourcing Network</h2>
+                <p>
+                    Receive quarterly crop arrival reports from Madagascar, green coffee pricing tables, and a <strong>15% sample discount code</strong> for your initial sample order.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('🎉 Welcome to the Sourcing Network! Sample code WELCOME15 activated.'); this.reset();">
+                    <input type="email" placeholder="Enter roastery or company email..." required aria-label="Company email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Contact Section with Direct Dialogue & WhatsApp -->
+    <section class="section-padding" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="tagline-badge">Get In Touch</span>
+                <h2 class="section-title">Start Your Sourcing Dialogue with MADECAF</h2>
+                <p class="section-subtitle">
+                    Looking for a specific coffee format or larger quantity? Contact us to discuss your requirements.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px;">MADECAF Direct Sourcing Office</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Sourcing Origin & Representation</h4>
+                            <p>Antananarivo & Mananjary (Madagascar) | Direct inquiries for Malaysian Roasters & Cafés</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>Direct Business Inquiries</h4>
+                            <p><a href="mailto:sourcing@madecaf.com" style="color:var(--color-accent); font-weight:600;">sourcing@madecaf.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">💬</div>
+                        <div>
+                            <h4>Instant WhatsApp for Roasters</h4>
+                            <p>Direct chat with our green coffee sourcing coordinator:</p>
+                            <a href="https://wa.me/261340000000?text=Hello%20MADECAF,%20I%20am%20a%20Malaysian%20coffee%20roaster%20interested%20in%20Malagasy%20Robusta%20green%20coffee%20samples" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 10px; font-size: 0.85rem; padding: 8px 16px;">
+                                💬 Chat with Us on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 18px;">Send a Sourcing Enquiry</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="c-name">Your Full Name & Roastery Name</label>
+                            <input type="text" id="c-name" required placeholder="e.g. Kenneth Lee | Klang Valley Roasters">
+                        </div>
+                        <div class="form-group">
+                            <label for="c-email">Business Email Address</label>
+                            <input type="email" id="c-email" required placeholder="kenneth@roastery.my">
+                        </div>
+                        <div class="form-group">
+                            <label for="c-msg">Tell us your requirements (Sample volumes, monthly green bean usage, target profile)</label>
+                            <textarea id="c-msg" required placeholder="We are a Malaysian roaster looking for washed Robusta green beans for an espresso blend..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Sourcing Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. AI Declaration Section (Academic Requirement - 15%) -->
+    <section class="section-padding" id="ai-declaration" style="background: var(--color-surface); border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="ai-declaration-box">
+                <div>
+                    <span class="tagline-badge">Academic Compliance</span>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Official AI Integration & Ethics Declaration</h2>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted); max-width: 800px;">
+                        In accordance with EPPK6243 (Master - Polytech Paris-Saclay), this disclosure outlines the specific AI tools, elements generated, strategic business value, and student creative verification applied.
+                    </p>
+                </div>
+
+                <table class="declaration-table">
+                    <thead>
+                        <tr>
+                            <th>AI Tool Used</th>
+                            <th>Generated Component</th>
+                            <th>Business & Marketing Value</th>
+                            <th>Human / Student Input & Verification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ChatGPT & Claude (LLM)</strong></td>
+                            <td>B2B value proposition, product specifications for Malaysian market, AI blend matcher</td>
+                            <td>Articulates the sample-first sourcing model clearly for Malaysian roasters and coffee buyers.</td>
+                            <td>Synthesized exact positioning (target: Malaysian roasters), aligned tone for B2B export feasibility, verified Robusta screen sizes.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canva AI & Graphic Synthesis</strong></td>
+                            <td>Visual layout concepts, minimalist design system, branding guidelines</td>
+                            <td>Establishes a credible, high-end organic brand identity using the dedicated palette (#F5F2EB, #BD7E4A, #E86315...).</td>
+                            <td>Integrated the precise Chesna Grotesk typography, color balance, and minimalist business aesthetic.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dynamic Canvas AI Video Engine</strong></td>
+                            <td>Interactive 40s promotional sourcing film (with synchronized voiceover transcript)</td>
+                            <td>Boosts visitor engagement, explains the Madagascar origin story, and showcases sample-to-order flow.</td>
+                            <td>Authored script, directed scene sequencing (origin -> beans -> direct trade -> Malaysian market connection).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="brand-logo" style="color: #fff; margin-bottom: 14px;">
+                        <span>MADECAF</span>
+                    </div>
+                    <p>
+                        "Discover Madagascar, One bean at a time."<br>
+                        Introducing Malagasy Robusta green coffee to Malaysian coffee businesses. Sample-first discovery with direct origin dialogue.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill">Instagram</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill">LinkedIn</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-pill">Facebook</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Green Coffee & Samples</a></li>
+                        <li><a href="#ai-experience">AI Sourcing Tool</a></li>
+                        <li><a href="#contact">Contact MADECAF</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Policies & Terms</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').classList.add('open')">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="document.getElementById('terms-modal').classList.add('open')">Terms of Service & Sample Shipping</a></li>
+                        <li><a href="javascript:void(0)" onclick="document.getElementById('returns-modal').classList.add('open')">Returns & Replacement Policy</a></li>
+                        <li><a href="#ai-declaration">AI Declaration Statement</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Project Details</h4>
+                    <p>
+                        <strong>Course:</strong> EPPK6243 Business Numérique<br>
+                        <strong>Institution:</strong> Polytech Paris-Saclay (APP3 IIM)<br>
+                        <strong>Deadline:</strong> October 30, 2026<br>
+                        <strong>Submission:</strong> UKMFolio Public Host
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 MADECAF. All rights reserved. Built with Chesna Grotesk, HTML, CSS & JavaScript for GitHub Pages.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 12. Interactive Sliding Cart Drawer (Word-for-word prompt content) -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+        <div class="cart-header">
+            <div>
+                <h3 style="font-size: 1.2rem;">SHOPPING CART</h3>
+                <p style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 4px;">
+                    Review your selected MadeCaf products and adjust quantities before proceeding.
+                </p>
+            </div>
+            <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Cart">✕</button>
+        </div>
+
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Dynamically injected via main.js -->
+        </div>
+
+        <!-- Custom Notice from User Brief -->
+        <div style="background: rgba(189, 126, 74, 0.12); padding: 14px; margin: 0 16px; border-radius: 8px; font-size: 0.8rem; border-left: 3px solid var(--color-accent);">
+            <strong>Looking for a specific coffee format or larger quantity?</strong><br>
+            Contact us to discuss your requirements.
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">€0.00</span>
+            </div>
+            <div class="cart-summary-line" style="color: var(--color-accent);">
+                <span>Sample Discount</span>
+                <span id="cart-discount">-€0.00</span>
+            </div>
+            <div class="promo-input-box">
+                <input type="text" id="promo-code-input" placeholder="Promo code (e.g. WELCOME15)">
+                <button class="btn btn-outline" id="apply-promo-btn" style="padding: 6px 12px; font-size: 0.8rem;">Apply</button>
+            </div>
+            <div class="cart-summary-line total">
+                <span>Estimated Total</span>
+                <span id="cart-total">€0.00</span>
+            </div>
+
+            <!-- Buttons Requested by User in Shopping Cart Brief -->
+            <button class="btn btn-primary btn-checkout" onclick="initiateCheckout()">Proceed to Sample Checkout</button>
+            <div style="display: flex; gap: 8px; margin-top: 10px;">
+                <button class="btn btn-outline" style="flex: 1; padding: 8px 10px; font-size: 0.82rem;" onclick="toggleCart()">Continue Shopping</button>
+                <a href="#contact" class="btn btn-outline" style="flex: 1; padding: 8px 10px; font-size: 0.82rem; text-align: center;" onclick="toggleCart()">Contact MADECAF</a>
+            </div>
+            <p style="text-align: center; font-size: 0.72rem; color: var(--color-text-muted); margin-top: 10px;">
+                🔒 Sample Request Simulation (No payment required under EPPK6243 guidelines)
+            </p>
+        </div>
+    </aside>
+
+    <!-- 13. Modals (Video, Privacy, Terms, Checkout) -->
+    <!-- Promo Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-box" style="max-width: 720px; text-align: center;">
+            <button class="modal-close" onclick="closeModal('video-modal')">✕</button>
+            <h3 style="margin-bottom: 6px;">MADECAF — Malagasy Robusta for Malaysian Roasters</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 16px;">
+                AI Promotional Video introducing our sample-first green coffee sourcing pathway.
+            </p>
+            <canvas id="promo-video-canvas" width="660" height="360" style="width:100%; height:auto; border-radius: 8px; background: #2B1E16;"></canvas>
+            <div style="background: var(--color-bg); padding: 12px; border-radius: 8px; margin-top: 14px; text-align: left; font-size: 0.82rem;">
+                <strong>Voiceover Transcript:</strong><br>
+                <em>"Explore Malagasy Robusta green coffee for Malaysian coffee businesses. From the rich volcanic soils of Madagascar's rainforests to progressive roasteries in Malaysia. Explore sample options and start your coffee sourcing journey with MadeCaf. Discover Madagascar, One bean at a time."</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacy-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('privacy-modal')">✕</button>
+            <h3>Privacy Policy</h3>
+            <p style="margin-top: 10px; font-size: 0.88rem; color: var(--color-text-muted);">
+                At MADECAF, we respect your privacy. This policy explains how we collect and protect your data:
+            </p>
+            <ul style="margin: 14px 20px; font-size: 0.85rem; line-height: 1.8;">
+                <li><strong>Data Collection:</strong> We only collect contact information (names, emails) provided willingly through our contact and sample request forms.</li>
+                <li><strong>Cart Persistence:</strong> Shopping cart items are stored strictly in your browser’s local storage (localStorage) and are never sold to third parties.</li>
+                <li><strong>Cookies & Tracking:</strong> We do not use third-party tracking pixels or behavioral ad trackers.</li>
+                <li><strong>User Rights:</strong> You can request full data deletion at any time by contacting us at sourcing@madecaf.com.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Terms of Service & Shipping Modal -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('terms-modal')">✕</button>
+            <h3>Terms of Service & Sample Shipping (CGV)</h3>
+            <p style="margin-top: 10px; font-size: 0.88rem; color: var(--color-text-muted);">
+                General Terms and Conditions governing green coffee sample requests on MADECAF:
+            </p>
+            <ul style="margin: 14px 20px; font-size: 0.85rem; line-height: 1.8;">
+                <li><strong>Sample Dispatch:</strong> Green coffee samples (1kg or 5kg) are dispatched via air courier with grain moisture documentation.</li>
+                <li><strong>International Delivery:</strong> Standard courier delivery to Malaysia typically takes 4–8 business days.</li>
+                <li><strong>Commercial Orders:</strong> Full container or pallet shipments are governed by separate bilateral B2B export contracts.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Returns & Cancellation Modal -->
+    <div class="modal-overlay" id="returns-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('returns-modal')">✕</button>
+            <h3>Returns & Replacement Policy</h3>
+            <p style="margin-top: 10px; font-size: 0.88rem; color: var(--color-text-muted);">
+                Our commitments regarding sample shipments:
+            </p>
+            <ul style="margin: 14px 20px; font-size: 0.85rem; line-height: 1.8;">
+                <li><strong>Damaged Samples:</strong> If sample packaging arrives torn or moisture compromised, replacement sample pouches are dispatched immediately.</li>
+                <li><strong>Cupping Discrepancies:</strong> Comprehensive technical cupping sheets accompany each batch to ensure sample-to-lot consistency.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Checkout Simulation Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-box" style="text-align: center;">
+            <button class="modal-close" onclick="closeModal('checkout-modal')">✕</button>
+            <span style="font-size: 3rem;">📦</span>
+            <h3 style="margin-top: 10px;">Sample Request Submitted</h3>
+            <p style="margin: 12px 0; font-size: 0.9rem; color: var(--color-text-muted);">
+                Under course guidelines for <strong>EPPK6243</strong>, real online payments are not required. Your sample inquiry has been registered for Malaysian delivery simulation!
+            </p>
+            <div style="background: var(--color-bg); padding: 16px; border-radius: 8px; margin: 15px 0; text-align: left; font-size: 0.85rem;">
+                <p><strong>Sample Request Ref:</strong> #MADECAF-MY-2026</p>
+                <p><strong>Destination:</strong> Malaysia (Air Courier Dispatch)</p>
+                <p><strong>Status:</strong> Awaiting Roaster Cupping Confirmation</p>
+            </div>
+            <button class="btn btn-primary" onclick="cart = []; saveCart(); updateCartUI(); closeModal('checkout-modal'); toggleCart();">Clear Cart & Complete</button>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
