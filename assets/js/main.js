@@ -1,113 +1,159 @@
-// MADECAF - B2B Green Coffee Sourcing & Sample Orders
-// Connecting Madagascar's Robusta Origin with Malaysian Roasters
+// ==========================================================================
+// MADECAF — Apple-Inspired Interactive Engine
+// Smooth view transitions, cinematic canvas video player,
+// dynamic cart state, and AI blend sommelier.
+// ==========================================================================
 
-// Product catalog data tailored to Malaysian B2B Coffee Businesses
+// Catalog data adapted for B2B Malagasy Robusta Green Coffee for Malaysian Roasters
+// Currency: Malaysian Ringgit (RM)
 const products = [
     {
         id: "mc-01",
-        name: "Madagascar Fine Robusta (Mananjary Origin)",
-        region: "Vatovavy-Fitovinany, Madagascar",
+        name: "Madagascar Fine Robusta (Mananjary)",
+        region: "Vatovavy Terroir, Madagascar",
         process: "Wet-Processed (Washed)",
         grade: "Screen 18 | Specialty Grade",
-        price: 18.00,
-        samplePrice: 18.00,
-        kgPrice: 8.50,
+        price: 85.00,
         category: "green-beans",
-        notes: "Heavy syrupy body, deep dark cocoa, roasted macadamia nuts, and a remarkably clean finish with low acidity. Ideal for bold espresso blends and traditional kopitiam craft roasts.",
+        notes: "Heavy syrupy body, deep dark cocoa, roasted macadamia nuts, and a remarkably clean finish with zero bitterness. Ideal for bold espresso crema and modern specialty roasts in Malaysia.",
         badge: "Flagship Origin",
         icon: "☕",
-        gradient: "linear-gradient(135deg, #2B1E16, #BD7E4A)"
+        gradient: "linear-gradient(135deg, #2F3630 0%, #3D4433 50%, #7A4B2A 100%)"
     },
     {
         id: "mc-02",
-        name: "Wild Canopy Robusta (East Coast Forest)",
-        region: "Atsinanana Rainforest Corridor, Madagascar",
+        name: "Wild Canopy Robusta (East Coast)",
+        region: "Atsinanana Rainforest Corridor",
         process: "Natural Sun-Dried",
         grade: "Screen 16/17 | High Grown",
-        price: 16.50,
-        samplePrice: 16.50,
-        kgPrice: 7.80,
+        price: 78.00,
         category: "green-beans",
-        notes: "Grown wild under endemic tropical forest canopy. Notes of raw cacao nibs, cedarwood, subtle spices, and rich crema formation.",
+        notes: "Harvested wild beneath native tropical forest canopies. Imparts raw cacao nibs, cedarwood, subtle clove spice, and intense velvety mouthfeel.",
         badge: "Wild Agroforestry",
         icon: "🌿",
-        gradient: "linear-gradient(135deg, #1f140d, #8F877D)"
+        gradient: "linear-gradient(135deg, #363F32 0%, #505540 50%, #8A7A6E 100%)"
     },
     {
         id: "mc-03",
         name: "Sambirano Valley Robusta (Cacao Terroir)",
-        region: "Sambirano River Basin, Madagascar",
+        region: "Ambanja River Basin, Madagascar",
         process: "Honey Processed",
         grade: "Screen 18 | Micro-Lot",
-        price: 21.00,
-        samplePrice: 21.00,
-        kgPrice: 9.80,
+        price: 98.00,
         category: "micro-lot",
-        notes: "Cultivated alongside Madagascar's world-famous Sambirano fine cocoa. Imparts distinct sweet fruit notes, brown sugar, and molten dark chocolate undertones.",
+        notes: "Cultivated alongside Madagascar's world-renowned fine cocoa plantations. Transmits notes of warm molasses, dark chocolate shavings, and dried plums.",
         badge: "Micro-Lot Reserve",
         icon: "🍫",
-        gradient: "linear-gradient(135deg, #BD7E4A, #E86315)"
+        gradient: "linear-gradient(135deg, #505540 0%, #7A4B2A 50%, #A48866 100%)"
     },
     {
         id: "mc-04",
         name: "Malaysian Roaster Discovery Sample Kit",
-        region: "Multi-Terroir Madagascar Curated Pack",
+        region: "Curated 3-Terroir Cupping Set",
         process: "Washed & Natural Samples",
-        grade: "3x 500g Roaster Cupping Samples",
-        price: 45.00,
-        samplePrice: 45.00,
-        kgPrice: 45.00,
+        grade: "3x 500g Roaster Lab Pouches",
+        price: 210.00,
         category: "samples",
-        notes: "The ideal starting point for Malaysian roasters: contains 500g of Mananjary Washed, 500g of Wild Canopy Natural, and 500g of Sambirano Honey with full cupping analysis sheets.",
-        badge: "Sample Kit",
+        notes: "The definitive sample starter kit for Malaysian roasters: 500g of Mananjary Washed, 500g of Wild Canopy Natural, and 500g of Sambirano Honey with green bean density & moisture logs.",
+        badge: "Complete Set",
         icon: "📦",
-        gradient: "linear-gradient(135deg, #38251a, #E86315)"
+        gradient: "linear-gradient(135deg, #2F3630 0%, #71755E 50%, #7A4B2A 100%)"
     }
 ];
 
-// Shopping Cart State (saved in localStorage for persistence)
+// Shopping Cart State
 let cart = JSON.parse(localStorage.getItem('madecaf_cart')) || [];
 let activePromo = null;
 
-// Initialize on DOM ready
+// Apple Video Cinema State
+let videoAnimationId = null;
+let isVideoPlaying = true;
+let videoFrame = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
+    initPageTransitions();
+    initScrollReveal();
     renderProducts('all');
     updateCartUI();
     setupEventListeners();
+    initHeroCinema();
 });
 
-// Render products dynamically
-function renderProducts(categoryFilter = 'all') {
+// Apple-style View Transition Curtain
+function initPageTransitions() {
+    const curtain = document.createElement('div');
+    curtain.className = 'page-transition-curtain';
+    document.body.appendChild(curtain);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#' || targetId === 'javascript:void(0)') return;
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                // Smooth scroll with Apple ease
+                targetEl.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Apple-style Scroll Observer for Fade-in & Scale Reveal
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+}
+
+// Render Apple-style Hardware/Product Cards
+function renderProducts(category = 'all') {
     const grid = document.getElementById('products-grid');
     if (!grid) return;
 
-    const filtered = categoryFilter === 'all' 
+    const filtered = category === 'all' 
         ? products 
-        : products.filter(p => p.category === categoryFilter);
+        : products.filter(p => p.category === category);
 
     grid.innerHTML = filtered.map(p => `
-        <article class="product-card" data-category="${p.category}">
-            <div class="product-img-wrapper" style="background: ${p.gradient};">
-                <span style="font-size: 3.5rem;">${p.icon}</span>
-                <span class="product-badge">${p.badge}</span>
-                <span class="product-roast-level">${p.process}</span>
+        <article class="product-apple-card reveal-on-scroll is-visible" data-category="${p.category}">
+            <div class="product-hero-visual" style="background: ${p.gradient};">
+                <span style="font-size: 3.8rem; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));">${p.icon}</span>
+                <span class="product-chip-badge">${p.badge}</span>
+                <span class="product-process-badge">${p.process}</span>
             </div>
-            <div class="product-info">
-                <span class="product-region">${p.region}</span>
-                <h3 class="product-title">${p.name}</h3>
-                <p class="product-notes">${p.notes}</p>
-                <div class="product-options">
+            <div class="product-apple-body">
+                <span class="product-region-label">${p.region}</span>
+                <h3>${p.name}</h3>
+                <p>${p.notes}</p>
+
+                <div class="apple-select-box">
                     <label for="format-${p.id}">Sample & Order Format</label>
                     <select id="format-${p.id}" onchange="updateProductPriceDisplay('${p.id}')">
-                        <option value="1kg Roaster Cupping Sample" data-price="${p.price}">1kg Cupping Sample Pouch — €${p.price.toFixed(2)}</option>
-                        <option value="5kg Pilot Test Bag" data-price="${(p.price * 4.2).toFixed(2)}">5kg Pilot Test Bag — €${(p.price * 4.2).toFixed(2)}</option>
+                        <option value="1kg Roaster Cupping Sample" data-price="${p.price}">1kg Cupping Sample Pouch — RM ${p.price.toFixed(2)}</option>
+                        <option value="5kg Pilot Test Bag" data-price="${(p.price * 4.2).toFixed(2)}">5kg Pilot Test Bag — RM ${(p.price * 4.2).toFixed(2)}</option>
                         <option value="60kg Jute Bag (B2B Sourcing Quote)" data-price="0">60kg Wholesale Sourcing (Contact for Quote)</option>
                     </select>
                 </div>
-                <div class="product-bottom">
-                    <span class="product-price" id="price-display-${p.id}">€${p.price.toFixed(2)}</span>
-                    <button class="btn-add-cart" onclick="addToCart('${p.id}')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+
+                <div class="product-apple-footer">
+                    <span class="product-price-apple" id="price-display-${p.id}">RM ${p.price.toFixed(2)}</span>
+                    <button class="btn btn-dark" style="padding: 8px 18px; font-size: 0.84rem;" onclick="addToCart('${p.id}')">
                         Add Sample
                     </button>
                 </div>
@@ -116,12 +162,21 @@ function renderProducts(categoryFilter = 'all') {
     `).join('');
 }
 
-// Filter buttons click
+function updateProductPriceDisplay(productId) {
+    const select = document.getElementById(`format-${productId}`);
+    const display = document.getElementById(`price-display-${productId}`);
+    if (!select || !display) return;
+    const opt = select.options[select.selectedIndex];
+    const price = parseFloat(opt.dataset.price);
+    display.textContent = price === 0 ? 'Quote' : `RM ${price.toFixed(2)}`;
+}
+
+// Shopping Cart Logic
 function setupEventListeners() {
-    // Filter click
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    // Filter buttons
+    document.querySelectorAll('.filter-btn-apple').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn-apple').forEach(b => b.classList.remove('active'));
             e.currentTarget.classList.add('active');
             renderProducts(e.currentTarget.dataset.filter);
         });
@@ -136,35 +191,25 @@ function setupEventListeners() {
     if (closeCartBtn) closeCartBtn.addEventListener('click', toggleCart);
     if (overlay) overlay.addEventListener('click', toggleCart);
 
-    // AI Sommelier Quiz Trigger
+    // AI Sommelier Quiz
     const quizForm = document.getElementById('coffee-quiz-form');
-    if (quizForm) {
-        quizForm.addEventListener('submit', runAISommelier);
-    }
+    if (quizForm) quizForm.addEventListener('submit', runAISommelier);
 
-    // Video modal handlers
-    const videoBtn = document.getElementById('watch-promo-video-btn');
-    if (videoBtn) {
-        videoBtn.addEventListener('click', openVideoModal);
-    }
-
-    // Contact form submit simulation
+    // Contact Form
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            showToast("✨ Thank you! Your inquiry was sent to MADECAF Antananarivo.");
+            showToast("✨ Inquiry sent! Our sourcing team will connect with your roastery.");
             contactForm.reset();
         });
     }
 
-    // Promo code apply
+    // Promo Code
     const promoBtn = document.getElementById('apply-promo-btn');
-    if (promoBtn) {
-        promoBtn.addEventListener('click', applyPromoCode);
-    }
+    if (promoBtn) promoBtn.addEventListener('click', applyPromoCode);
 
-    // Mobile nav toggle
+    // Mobile nav
     const mobileBtn = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (mobileBtn && navLinks) {
@@ -174,7 +219,6 @@ function setupEventListeners() {
     }
 }
 
-// Cart Management Logic
 function toggleCart() {
     const drawer = document.getElementById('cart-drawer');
     const overlay = document.getElementById('cart-overlay');
@@ -184,44 +228,29 @@ function toggleCart() {
     }
 }
 
-function updateProductPriceDisplay(productId) {
-    const formatSelect = document.getElementById(`format-${productId}`);
-    const priceDisplay = document.getElementById(`price-display-${productId}`);
-    if (!formatSelect || !priceDisplay) return;
-    const selectedOpt = formatSelect.options[formatSelect.selectedIndex];
-    const price = parseFloat(selectedOpt.dataset.price);
-    if (price === 0) {
-        priceDisplay.textContent = 'Quote';
-    } else {
-        priceDisplay.textContent = `€${price.toFixed(2)}`;
-    }
-}
-
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    const formatSelect = document.getElementById(`format-${productId}`);
+    const select = document.getElementById(`format-${productId}`);
     let format = '1kg Roaster Cupping Sample';
     let unitPrice = product.price;
 
-    if (formatSelect) {
-        const selectedOpt = formatSelect.options[formatSelect.selectedIndex];
-        format = selectedOpt.value;
-        const parsedPrice = parseFloat(selectedOpt.dataset.price);
+    if (select) {
+        const opt = select.options[select.selectedIndex];
+        format = opt.value;
+        const parsedPrice = parseFloat(opt.dataset.price);
         if (parsedPrice === 0) {
-            // It's a wholesale request -> scroll to contact
             window.location.href = "#contact";
-            showToast("Redirected to Contact: Inquire for 60kg wholesale container lots.");
+            showToast("Redirecting to Contact for 60kg wholesale container quote.");
             return;
         }
         unitPrice = parsedPrice;
     }
 
-    const existingIndex = cart.findIndex(item => item.id === productId && item.format === format);
-
-    if (existingIndex > -1) {
-        cart[existingIndex].qty += 1;
+    const existing = cart.find(item => item.id === productId && item.format === format);
+    if (existing) {
+        existing.qty += 1;
     } else {
         cart.push({
             id: product.id,
@@ -234,9 +263,8 @@ function addToCart(productId) {
 
     saveCart();
     updateCartUI();
-    showToast(`Added 1× "${product.name}" (${format}) to cart`);
+    showToast(`Added: ${product.name} (${format})`);
     
-    // Auto open drawer to provide clear visual feedback
     const drawer = document.getElementById('cart-drawer');
     if (drawer && !drawer.classList.contains('open')) {
         toggleCart();
@@ -255,11 +283,10 @@ function changeQty(index, delta) {
 
 function removeItem(index) {
     if (!cart[index]) return;
-    const removedName = cart[index].name;
     cart.splice(index, 1);
     saveCart();
     updateCartUI();
-    showToast(`Removed "${removedName}" from cart`);
+    showToast("Sample removed from cart");
 }
 
 function saveCart() {
@@ -280,15 +307,15 @@ function updateCartUI() {
 
     if (cart.length === 0) {
         container.innerHTML = `
-            <div class="cart-empty-msg">
-                <p style="font-size: 2.5rem; margin-bottom: 10px;">☕</p>
-                <p>Your sample cart is currently empty.</p>
-                <p style="font-size: 0.8rem; margin-top: 6px;">Explore our Malagasy Robusta green coffee sample options above.</p>
+            <div style="text-align: center; color: var(--color-text-muted); padding: 50px 0;">
+                <p style="font-size: 2.8rem; margin-bottom: 12px;">☕</p>
+                <p style="font-size: 1.05rem; font-weight: 600; color: var(--color-primary);">Your sample cart is empty</p>
+                <p style="font-size: 0.84rem; margin-top: 6px;">Explore our Malagasy Robusta green coffee sample options above.</p>
             </div>
         `;
-        if (subtotalEl) subtotalEl.textContent = '€0.00';
-        if (discountEl) discountEl.textContent = '-€0.00';
-        if (totalEl) totalEl.textContent = '€0.00';
+        if (subtotalEl) subtotalEl.textContent = 'RM 0.00';
+        if (discountEl) discountEl.textContent = '-RM 0.00';
+        if (totalEl) totalEl.textContent = 'RM 0.00';
         return;
     }
 
@@ -298,10 +325,10 @@ function updateCartUI() {
             <div class="cart-item-details">
                 <div class="cart-item-title">${item.name}</div>
                 <div class="cart-item-grind">${item.format}</div>
-                <div class="cart-item-price">€${(item.price * item.qty).toFixed(2)} <span style="font-size:0.75rem; color:#8F877D;">(€${item.price.toFixed(2)}/unit)</span></div>
+                <div class="cart-item-price">RM ${(item.price * item.qty).toFixed(2)} <span style="font-size:0.75rem; color:#8F877D;">(RM ${item.price.toFixed(2)}/unit)</span></div>
                 <div class="cart-qty-ctrl">
-                    <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
-                    <span style="font-size: 0.85rem; font-weight:600; min-width:18px; text-align:center;">${item.qty}</span>
+                    <button class="qty-btn" onclick="changeQty(${idx}, -1)">−</button>
+                    <span style="font-size: 0.88rem; font-weight:700; min-width:20px; text-align:center;">${item.qty}</span>
                     <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
                     <button class="cart-remove-btn" onclick="removeItem(${idx})" title="Remove">✕</button>
                 </div>
@@ -311,21 +338,16 @@ function updateCartUI() {
 
     const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
     let discount = 0;
-
-    if (activePromo === 'WELCOME15') {
-        discount = subtotal * 0.15;
-    } else if (activePromo === 'MADAGASCAR') {
-        discount = subtotal * 0.10;
-    }
+    if (activePromo === 'WELCOME15') discount = subtotal * 0.15;
+    if (activePromo === 'MADAGASCAR') discount = subtotal * 0.10;
 
     const total = Math.max(0, subtotal - discount);
 
-    if (subtotalEl) subtotalEl.textContent = `€${subtotal.toFixed(2)}`;
-    if (discountEl) discountEl.textContent = `-€${discount.toFixed(2)}`;
-    if (totalEl) totalEl.textContent = `€${total.toFixed(2)}`;
+    if (subtotalEl) subtotalEl.textContent = `RM ${subtotal.toFixed(2)}`;
+    if (discountEl) discountEl.textContent = `-RM ${discount.toFixed(2)}`;
+    if (totalEl) totalEl.textContent = `RM ${total.toFixed(2)}`;
 }
 
-// Promo Code validation
 function applyPromoCode() {
     const input = document.getElementById('promo-code-input');
     if (!input) return;
@@ -333,10 +355,10 @@ function applyPromoCode() {
 
     if (code === 'WELCOME15') {
         activePromo = 'WELCOME15';
-        showToast("🎉 Promo code applied! 15% discount deducted.");
+        showToast("🎉 15% sample roaster discount applied!");
     } else if (code === 'MADAGASCAR') {
         activePromo = 'MADAGASCAR';
-        showToast("🌴 Madagascar promo code applied! 10% discount.");
+        showToast("🌴 10% origin discount applied!");
     } else {
         showToast("⚠️ Invalid promo code. Try 'WELCOME15'");
         return;
@@ -344,19 +366,20 @@ function applyPromoCode() {
     updateCartUI();
 }
 
-// Checkout simulation modal
 function initiateCheckout() {
     if (cart.length === 0) {
-        showToast("Your cart is empty!");
+        showToast("Your sample cart is empty!");
         return;
     }
     const modal = document.getElementById('checkout-modal');
-    if (modal) {
-        modal.classList.add('open');
-    }
+    if (modal) modal.classList.add('open');
 }
 
-// Toast notification trigger
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) modal.classList.remove('open');
+}
+
 function showToast(message) {
     let toast = document.getElementById('toast');
     if (!toast) {
@@ -367,120 +390,144 @@ function showToast(message) {
     }
     toast.textContent = message;
     toast.classList.add('show');
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3200);
+    setTimeout(() => toast.classList.remove('show'), 3400);
 }
 
-// AI Sommelier Quiz Function
+// AI Matchmaker (Apple Genius Bar Concept)
 function runAISommelier(e) {
     e.preventDefault();
-    const roastPref = document.getElementById('quiz-roast').value;
-    const brewPref = document.getElementById('quiz-brew').value;
-    const flavorPref = document.getElementById('quiz-flavor').value;
+    const roast = document.getElementById('quiz-roast').value;
+    const brew = document.getElementById('quiz-brew').value;
+    const flavor = document.getElementById('quiz-flavor').value;
 
-    let match = products[0]; // default Laurina
-
-    if (flavorPref === 'cocoa' || roastPref === 'dark') {
-        match = products[1]; // Mananjary Robusta
-    } else if (flavorPref === 'fruity' || brewPref === 'filter') {
-        match = products[2]; // Sambirano Valley
-    } else if (flavorPref === 'rare' || brewPref === 'any') {
-        match = products[3]; // Peaberry Reserve
-    }
+    let match = products[0]; // Mananjary
+    if (flavor === 'fruity' || roast === 'light') match = products[2]; // Sambirano
+    if (flavor === 'rare' || brew === 'french') match = products[3]; // Discovery Kit
 
     const resultBox = document.getElementById('quiz-result');
     if (resultBox) {
         resultBox.style.display = 'block';
         resultBox.innerHTML = `
-            <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 8px;">
-                <span style="font-size: 1.8rem;">🤖</span>
-                <div>
-                    <h4 style="color: var(--color-primary); margin:0;">AI Sommelier Recommendation: <strong>${match.name}</strong></h4>
-                    <span style="font-size:0.8rem; color: var(--color-accent); font-weight:700;">Matched based on your profile (${roastPref} roast, ${brewPref} method, ${flavorPref} notes)</span>
+            <div style="background: #FAF8F5; border-radius: var(--radius-md); padding: 24px; border: 1px solid var(--apple-border); margin-top: 20px;">
+                <span class="eyebrow">Match Found for Your Roastery</span>
+                <h4 style="font-size: 1.4rem; color: var(--color-primary); margin-bottom: 6px;">${match.name}</h4>
+                <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 16px;">${match.notes}</p>
+                <div style="display: flex; gap: 14px; align-items: center;">
+                    <span style="font-size: 1.3rem; font-weight:800; color:var(--color-primary);">RM ${match.price.toFixed(2)}</span>
+                    <button class="btn btn-primary" onclick="addToCart('${match.id}')">Add Recommended Sample to Cart</button>
                 </div>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--color-primary); margin: 8px 0;">${match.notes}</p>
-            <div style="display: flex; gap: 12px; align-items: center; margin-top: 10px;">
-                <span style="font-size: 1.1rem; font-weight:700; color:var(--color-primary);">€${match.price.toFixed(2)}</span>
-                <button class="btn btn-primary" style="padding: 6px 14px; font-size: 0.85rem;" onclick="addToCart('${match.id}')">Add Recommended Bean to Cart</button>
             </div>
         `;
     }
 }
 
-// Video Modal logic
-function openVideoModal() {
-    const modal = document.getElementById('video-modal');
-    if (modal) {
-        modal.classList.add('open');
-        playGeneratedVideoSimulation();
-    }
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('open');
-    }
-}
-
-// Canvas-based dynamic Promo Video Simulation (30-45s AI coffee cinematic experience)
-function playGeneratedVideoSimulation() {
-    const canvas = document.getElementById('promo-video-canvas');
+// Apple-Style Cinematic Video Canvas Player
+function initHeroCinema() {
+    const canvas = document.getElementById('hero-cinema-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let frame = 0;
-    let animationId;
 
     const scenes = [
-        { title: "MADECAF | Malagasy Robusta for Malaysian Roasters", subtitle: "Connecting pristine origin with Southeast Asian coffee craft", bg: "#2B1E16" },
-        { title: "Sample-First Discovery", subtitle: "1kg & 5kg cupping packs with screen 18 grading & moisture data", bg: "#473224" },
-        { title: "Direct Business Enquiries", subtitle: "Transparent sourcing dialogue directly with Madagascar origin", bg: "#BD7E4A" },
-        { title: "Discover Madagascar, One bean at a time", subtitle: "Start your sourcing journey with MADECAF today", bg: "#E86315" }
+        { 
+            scene: "ORIGIN",
+            title: "Pristine Volcanic Canopies", 
+            subtitle: "Madagascar's ancient rainforests produce dense, shade-grown Robusta with rare complexity.",
+            color: "#BD7E4A",
+            accentBg: "#1F140D"
+        },
+        { 
+            scene: "SELECTIVE HARVEST",
+            title: "Screen 18 Hand-Picked Quality", 
+            subtitle: "Strict density grading and raised-bed sun drying tailored for precision roasting.",
+            color: "#BD7E4A",
+            accentBg: "#2B1E16"
+        },
+        { 
+            scene: "B2B MALAYSIA LINK",
+            title: "Bridging Origin to Malaysian Roasters", 
+            subtitle: "Sample-first evaluation: taste 1kg cupping pouches before full container commitments.",
+            color: "#BD7E4A",
+            accentBg: "#17100B"
+        },
+        { 
+            scene: "EXPERIENCE",
+            title: "Discover Madagascar, One bean at a time.", 
+            subtitle: "Direct sourcing dialogue. Zero middle-men. Uncompromised terroir.",
+            color: "#FFFFFF",
+            accentBg: "#261910"
+        }
     ];
 
-    function draw() {
-        if (!document.getElementById('video-modal').classList.contains('open')) {
-            cancelAnimationFrame(animationId);
+    function render() {
+        if (!isVideoPlaying) {
+            videoAnimationId = requestAnimationFrame(render);
             return;
         }
 
-        const sceneIndex = Math.floor((frame / 120) % scenes.length);
-        const currentScene = scenes[sceneIndex];
-
-        ctx.fillStyle = currentScene.bg;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Ambient particles (steam/dust effect)
-        ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
-        for (let i = 0; i < 20; i++) {
-            const px = ((frame * (i + 1) * 1.5) % canvas.width);
-            const py = ((frame * 2 + i * 25) % canvas.height);
-            ctx.beginPath();
-            ctx.arc(px, py, (i % 3) + 1.5, 0, Math.PI * 2);
-            ctx.fill();
+        // Set dimensions cleanly for retina displays
+        if (canvas.width !== canvas.parentElement.clientWidth) {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
         }
 
-        // Draw Central Emblem
-        ctx.fillStyle = "#F5F2EB";
-        ctx.font = "bold 24px 'Chesna Grotesk', 'Plus Jakarta Sans', sans-serif";
+        const sceneIdx = Math.floor((videoFrame / 150) % scenes.length);
+        const cur = scenes[sceneIdx];
+
+        // Deep cinema background gradient
+        const bgGrad = ctx.createRadialGradient(
+            canvas.width / 2, canvas.height / 2, 50,
+            canvas.width / 2, canvas.height / 2, canvas.width * 0.7
+        );
+        bgGrad.addColorStop(0, cur.accentBg);
+        bgGrad.addColorStop(1, "#0D0805");
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Ambient cinematic floating aura
+        const time = videoFrame * 0.02;
+        const glowX = canvas.width / 2 + Math.sin(time) * 120;
+        const glowY = canvas.height / 2 + Math.cos(time) * 60;
+        const radialAura = ctx.createRadialGradient(glowX, glowY, 10, glowX, glowY, 260);
+        radialAura.addColorStop(0, "rgba(189, 126, 74, 0.22)");
+        radialAura.addColorStop(1, "rgba(0,0,0,0)");
+        ctx.fillStyle = radialAura;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Apple minimalist typography overlay
         ctx.textAlign = "center";
-        ctx.fillText(currentScene.title, canvas.width / 2, canvas.height / 2 - 20);
 
-        ctx.font = "15px 'Chesna Grotesk', 'Plus Jakarta Sans', sans-serif";
+        // Scene Pill Tag
+        ctx.font = "600 12px 'Chesna Grotesk', -apple-system, sans-serif";
+        ctx.fillStyle = cur.color;
+        ctx.fillText(cur.scene, canvas.width / 2, canvas.height / 2 - 45);
+
+        // Main Headline
+        ctx.font = "700 28px 'Chesna Grotesk', -apple-system, sans-serif";
         ctx.fillStyle = "#FAF8F5";
-        ctx.fillText(currentScene.subtitle, canvas.width / 2, canvas.height / 2 + 25);
+        ctx.fillText(cur.title, canvas.width / 2, canvas.height / 2);
 
-        // Progress bar at the bottom
-        const progress = ((frame % 480) / 480) * canvas.width;
-        ctx.fillStyle = "#E86315";
-        ctx.fillRect(0, canvas.height - 8, progress, 8);
+        // Subtitle
+        ctx.font = "400 15px 'Chesna Grotesk', -apple-system, sans-serif";
+        ctx.fillStyle = "#A99E94";
+        ctx.fillText(cur.subtitle, canvas.width / 2, canvas.height / 2 + 34);
 
-        frame++;
-        animationId = requestAnimationFrame(draw);
+        // Apple-style timeline progress bar
+        const totalFrames = 150 * scenes.length;
+        const progress = ((videoFrame % totalFrames) / totalFrames) * canvas.width;
+        ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
+        ctx.fillRect(0, canvas.height - 4, canvas.width, 4);
+        ctx.fillStyle = "#BD7E4A";
+        ctx.fillRect(0, canvas.height - 4, progress, 4);
+
+        videoFrame++;
+        videoAnimationId = requestAnimationFrame(render);
     }
 
-    animationId = requestAnimationFrame(draw);
+    render();
 }
 
+function toggleHeroVideo() {
+    isVideoPlaying = !isVideoPlaying;
+    const btn = document.getElementById('cinema-play-toggle');
+    if (btn) btn.textContent = isVideoPlaying ? "Pause Cinema" : "Resume Cinema";
+}
